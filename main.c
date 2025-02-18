@@ -1,7 +1,6 @@
 #include "SDL3/SDL.h"
 #include <stdio.h>
 
-
 #define SCREEN_WIDTH 900
 #define SCREEN_HEIGHT 600
 #define COLOR_WHITE 0xffffffff
@@ -14,9 +13,6 @@
 #define ROWS SCREEN_HEIGHT/CELL_SIZE
 #define WATER_TYPE 0
 #define SOLID_TYPE 1
-
-
-
 
 struct Cell{
     int type;
@@ -35,8 +31,6 @@ void draw_cell (SDL_Surface* surface, struct Cell cell){
 
     SDL_FillSurfaceRect(surface, &cell_rect, color);
 }
-
-
 void draw_grid(SDL_Surface* surface){
     for(int i = 0; i<COLUMNS; i++){
         SDL_Rect colums = (SDL_Rect){i*CELL_SIZE, 0, LINE_WIDTH, SCREEN_HEIGHT};
@@ -49,11 +43,6 @@ void draw_grid(SDL_Surface* surface){
         SDL_FillSurfaceRect(surface, &row, COLOR_GRAY);
     }
 }
-
-
-
-
-
 int main(int argc, char* argv[]) {
     SDL_Init(SDL_INIT_VIDEO);
     SDL_Window* window =  SDL_CreateWindow("Liquid Simulation",  SCREEN_WIDTH, SCREEN_HEIGHT, 0);
@@ -87,17 +76,11 @@ int main(int argc, char* argv[]) {
                     
                 }
             }
-
         }
-
-
         // SDL_Rect rect = (SDL_Rect){50,50,100,50}; 
-        // SDL_FillSurfaceRect(surface, &rect, COLOR_WHITE);
-    
-    
+        // SDL_FillSurfaceRect(surface, &rect, COLOR_WHITE);     
         // SDL_Rect rectblue = (SDL_Rect){150,50,100,50}; 
-        // SDL_FillSurfaceRect(surface, &rectblue, COLOR_BLUE);
-    
+        // SDL_FillSurfaceRect(surface, &rectblue, COLOR_BLUE);    
         SDL_UpdateWindowSurface(window);
         SDL_Delay(100);
     }
