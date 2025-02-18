@@ -1,0 +1,8 @@
+bin/
+SDL3/
+lib/
+*.exe
+share/
+*.dll
+.vscode/
+.vscode/settings.json
